@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Predictor</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Stock Predictor</h1>
+        <div class="input-container">
+            <input type="text" id="stockSymbol" placeholder="Enter Company or Stock">
+            <button onclick="getStockData()">Predict</button>
+        </div>
+        
+        <div id="stockData"></div>
+
+        <div id="stockInfo">
+            <h2>Stock Information</h2>
+            <p><strong>Company:</strong> <span id="companyName"></span></p>
+            <p><strong>Symbol:</strong> <span id="stockSymbol"></span></p>
+            <p><strong>Real-time Price:</strong> $<span id="realTimePrice"></span></p>
+        </div>
+        
+        <div id="graph">
+            <h2>Stock Price History</h2>
+            <div class="centered-select">
+                <select id="timeRange">
+                    <option value="1d">1 Day</option>
+                    <option value="5d">5 Days</option>
+                    <option value="1M">1 Month</option>
+                    <option value="3M">3 Months</option>
+                    <option value="MAX">All Time</option>
+                </select>
+            </div>
+            <canvas id="stockChart" width="400" height="200"></canvas>
+        </div>
+
+        <div id="predictions">
+            <h2>Predicted Stock Prices</h2>
+            <p><strong>1 Day:</strong> $<span id="prediction1d"></span></p>
+            <p><strong>5 Days:</strong> $<span id="prediction5d"></span></p>
+            <p><strong>1 Month:</strong> $<span id="prediction1M"></span></p>
+            <p><strong>3 Months:</strong> $<span id="prediction3M"></span></p>
+            <p><strong>6 Months:</strong> $<span id="prediction6M"></span></p>
+        </div>
+        
+    </main>
+    
+    <script src="./static/script.js"></script>
+</body>
+<footer>
+    <p>Stock Predictor © 2023 | Created by Patrick King</p>
+</footer>
+</html>
+
